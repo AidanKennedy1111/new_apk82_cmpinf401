@@ -1,0 +1,147 @@
+package apk82_MenuManager;
+/**
+ * This class serves as a manager for the menu
+ * @author aidankennedy
+ *
+ */
+public class Menu {
+	private String name;
+	private Entree entree = null;
+	private Dessert dessert = null; 
+	private Side side = null;
+	private Salad salad = null;
+	/**
+	 * This constructor creates a new menu based on user-provided parameters:
+	 * @param name Menu's name
+	 */
+	public Menu(String name) {
+		this.name = name;
+	}
+	/**
+	 * This constructor creates a new menu based on user-provided parameters:
+	 * @param name Menu's name
+	 * @param entree Menu's Entree
+	 * @param side Menu's Side
+	 */
+	public Menu(String name, Entree entree, Side side) {
+		this.name = name;
+		this.entree = entree;
+		this.side = side;
+	}
+	/**
+	 * This constructor creates a new menu based on user-provided parameters:
+	 * @param name Menu's name
+	 * @param entree Menu's Entree
+	 * @param side Menu's Side
+	 * @param salad Menu's Salad
+	 * @param dessert Menu's Dessert
+	 */
+	public Menu(String name, Entree entree, Side side, Salad salad, Dessert dessert) {
+		this.name = name;
+		this.entree = entree;
+		this.side = side;
+		this.salad = salad;
+		this.dessert = dessert;
+	}
+	/**
+	 * This method returns the total calories of all parts of the menu
+	 * @return total calories
+	 */
+	public int totalCalories() {
+		if(entree==null) {
+			setEntree(new Entree("no entree","no entree",0));
+		}
+		if(side==null) {
+			setSide(new Side("no side","no side",0));
+		}
+		if(salad==null) {
+			setSalad(new Salad("no salad","no salad",0));
+		}
+		if(dessert==null) {
+			setDessert(new Dessert("no dessert","no dessert",0));
+		}
+		System.out.print("total calories are: ");
+		return entree.getCalories()+side.getCalories()+salad.getCalories()+dessert.getCalories();
+	}
+	/**
+	 * This method returns the description of all parts of the menu
+	 * @return description of menu
+	 */
+	public String description() {
+		if(entree==null) {
+			setEntree(new Entree("no entree","no entree",0));
+		}
+		if(side==null) {
+			setSide(new Side("no side","no side",0));
+		}
+		if(salad==null) {
+			setSalad(new Salad("no salad","no salad",0));
+		}
+		if(dessert==null) {
+			setDessert(new Dessert("no dessert","no dessert",0));
+		}
+		return "Entree: "+ entree.getDescription()+"\nSide: "+side.getDescription()+"\nSalad: "+ salad.getDescription()+"\nDessert: "+dessert.getDescription();
+
+	}
+	/**
+	 * @return the name
+	 */
+	public String getName() {
+		return name;
+	}
+	/**
+	 * @param name the name to set
+	 */
+	public void setName(String name) {
+		this.name = name;
+	}
+	/**
+	 * @return the entree
+	 */
+	public Entree getEntree() {
+		return entree;
+	}
+	/**
+	 * @param entree the entree to set
+	 */
+	public void setEntree(Entree entree) {
+		this.entree = entree;
+	}
+	/**
+	 * @return the dessert
+	 */
+	public Dessert getDessert() {
+		return dessert;
+	}
+	/**
+	 * @param dessert the dessert to set
+	 */
+	public void setDessert(Dessert dessert) {
+		this.dessert = dessert;
+	}
+	/**
+	 * @return the side
+	 */
+	public Side getSide() {
+		return side;
+	}
+	/**
+	 * @param side the side to set
+	 */
+	public void setSide(Side side) {
+		this.side = side;
+	}
+	/**
+	 * @return the salad
+	 */
+	public Salad getSalad() {
+		return salad;
+	}
+	/**
+	 * @param salad the salad to set
+	 */
+	public void setSalad(Salad salad) {
+		this.salad = salad;
+	}
+
+}
