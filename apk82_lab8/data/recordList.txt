@@ -1,0 +1,4 @@
+rose,1.0
+aidan,1.0
+julia,3.0
+tim,5.0
